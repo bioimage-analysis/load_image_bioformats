@@ -369,7 +369,7 @@ class BioformatsReader(object):
                     'series': self._series}
 
         if self.calibration is not None:
-            metadata['pixel_size'] = self.calibration
+            metadata['pixel_size'] = round(float(self.calibration),3)
         if self.calibrationZ is not None:
             metadata['Z_step_size'] = self.calibrationZ
         metadata.update(coords)
